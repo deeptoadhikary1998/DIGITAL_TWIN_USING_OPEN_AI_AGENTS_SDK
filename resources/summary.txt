@@ -1,0 +1,39 @@
+DEEPTO ADHIKARY 
+Senior Application Developer | Java | Microservices | Cloud & Containerization 
+
+Profile Summary 
+Java Developer with 6+ years of experience across banking, financial services, microservices modernization, cloud-native applications and containerization initiatives. Experienced in Java, Spring Boot, Microservices, Apache Kafka, Docker, Kubernetes, CI/CD pipelines, Oracle SQL and cloud-based deployments. Currently working at IBM for Citi on containerization and platform modernization projects. 
+
+Core Skills 
+Java, J2EE, Spring Boot, Spring MVC, Microservices, Apache Camel, Kafka, JMS, Docker, Kubernetes, OpenShift, CI/CD Pipelines, Git, Maven, Jenkins, Oracle SQL, PLSQL, React.js, GCP, JUnit, Mockito 
+
+Professional Experience 
+ 
+
+IBM (January 2026 - Present) | Citi Client 
+
+Working on enterprise containerization and application modernization initiatives for Citi. 
+
+Deploying and managing containerized workloads using Docker and Kubernetes. 
+
+Supporting CI/CD pipeline implementation and automation for application delivery. 
+
+Collaborating with development and infrastructure teams to improve deployment reliability, scalability and operational efficiency. 
+
+Working with Java microservices and cloud-native deployment practices. 
+
+Infosys (December 2024 - 9 January 2026) 
+
+Collaborated with a large fintech client in the retail banking domain. 
+
+Led modernization of legacy Java monolithic applications into Spring Boot microservices. 
+
+Designed low-level components, schemas and migration solutions. 
+
+Performed unit testing and production issue analysis. 
+
+Nomura (August 2020 - December 2024) 
+
+Worked on enterprise broker back-office applications using Spring, Apache Camel, Oracle and Java technologies
+
+Food : I am allergic to sea fish.
