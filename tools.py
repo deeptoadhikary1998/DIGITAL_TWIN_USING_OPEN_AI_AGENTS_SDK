@@ -25,7 +25,7 @@ def send_email(to_email, subject, text_body, html_body):
     msg["Subject"] = subject
     msg.set_content(text_body)
     msg.add_alternative(html_body, subtype="html")
-
+    print("Sending email in progress")
     with smtplib.SMTP(EMAIL_SMTP_SERVER, 587) as server:
         server.starttls()
         server.login(from_email, EMAIL_APP_PASSWORD)
