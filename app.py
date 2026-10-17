@@ -8,6 +8,7 @@ from agents import OpenAIChatCompletionsModel
 from openai import AsyncOpenAI
 from styles import CSS, JS, EXAMPLES
 from context import TWIN_SYSTEM_PROMPT
+from tools import note_unknown_questions,collect_emails
 
 load_dotenv(override=True)
 
