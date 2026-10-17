@@ -68,8 +68,8 @@ def collect_emails(emails: list[str], name: str = "there") -> str:
                 html_body=f"<p>Hello {name}, your email was recorded. Please reply to this email to continue the conversation.</p>",
             )
             sent += 1
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"Pushover error: {e}")
 
     push(f"Collected {len(emails)} addresses. Sent {sent} emails.")
 
