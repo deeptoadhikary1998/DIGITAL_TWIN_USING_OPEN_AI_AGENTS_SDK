@@ -67,20 +67,19 @@ async def chat(message, history, session_id):
 def create_session_id():
     return uuid.uuid4().hex
 
-# Step 2: Create the Gradio app
+# Create the Gradio app
 with gr.Blocks() as demo:
 
-    # Step 3: Store one ID for each Gradio session
     session_id = gr.State(value=create_session_id)
 
-    # Step 4: Create the chat interface
     gr.ChatInterface(
         fn=chat,
         additional_inputs=[session_id],
-        title="Digital Twin",
+        title="Deepto's AI Twin",
         description="Talk to my AI twin about my career",
+        examples=EXAMPLES,
     )
 
-# Step 5: Start the app
+# Start the app
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(css=CSS, js=JS)

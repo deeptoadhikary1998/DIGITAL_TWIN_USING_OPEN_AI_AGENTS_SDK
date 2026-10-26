@@ -1,9 +1,8 @@
 import os
 import requests
 from dotenv import load_dotenv
-from email.message import EmailMessage
-import smtplib
 from agents import function_tool
+from send_email import send_email
 
 load_dotenv(override=True)
 
@@ -14,22 +13,7 @@ pushover_url = "https://api.pushover.net/1/messages.json"
 
 # Email credentials 
 from_email = os.getenv("EMAIL_ADDRESS")
-EMAIL_SMTP_SERVER = os.getenv("EMAIL_SMTP_SERVER")
-EMAIL_APP_PASSWORD = os.getenv("EMAIL_APP_PASSWORD")
 
-
-def send_email(to_email, subject, text_body, html_body):
-    msg = EmailMessage()
-    msg["From"] = from_email
-    msg["To"] = to_email
-    msg["Subject"] = subject
-    msg.set_content(text_body)
-    msg.add_alternative(html_body, subtype="html")
-    print("Sending email in progress")
-    with smtplib.SMTP(EMAIL_SMTP_SERVER, 587) as server:
-        server.starttls()
-        server.login(from_email, EMAIL_APP_PASSWORD)
-        server.send_message(msg)
 
 
 def push(text):
@@ -64,12 +48,11 @@ def collect_emails(emails: list[str], name: str = "there") -> str:
             send_email(
                 to_email=email,
                 subject="Email Confirmation",
-                text_body=f"Hello {name}, your email was recorded. Please reply to this email to continue the conversation.",
-                html_body=f"<p>Hello {name}, your email was recorded. Please reply to this email to continue the conversation.</p>",
+                body=f"Hello {name}, your email was recorded. Please reply to this email to continue the conversation.",
             )
             sent += 1
         except Exception as e:
-            print(f"Pushover error: {e}")
+            print(f"Email error: {e}")
 
     push(f"Collected {len(emails)} addresses. Sent {sent} emails.")
 
@@ -93,9 +76,8 @@ def note_unknown_questions(question: str) -> str:
         send_email(
             to_email=from_email,
             subject="Unanswered Question",
-            text_body=notification,
-            html_body=f"<p>{notification}</p>",
-        )
+            body=notification,
+          )
     except Exception as e:
         print(f"Email sending failed: {type(e).__name__}: {e}")
         return "The push notification was attempted, but the admin email failed."
