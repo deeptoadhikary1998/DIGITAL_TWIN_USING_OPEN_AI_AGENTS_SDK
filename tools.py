@@ -86,7 +86,7 @@ def note_unknown_questions(question: str) -> str:
 
 
 @function_tool
-def note_unknown_questions(question: str) -> str:
+def note_unknown_questions_ooc(question: str) -> str:
     """Notify the admin about any personal question or any question that is out of context via push and email."""
 
     notification = f"Question I could not answer OOC category: {question}"
