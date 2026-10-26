@@ -23,7 +23,7 @@ SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
 def load_credentials():
     token_path = os.environ.get(
         "GOOGLE_TOKEN_FILE",
-        "token.json"
+        "/etc/secrets/token.json"
     )
 
     credentials = Credentials.from_authorized_user_file(

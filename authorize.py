@@ -7,7 +7,7 @@ SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
 
 def main():
     flow = InstalledAppFlow.from_client_secrets_file(
-        "credentials.json",
+        "/etc/secrets/credentials.json",
         SCOPES
     )
 
