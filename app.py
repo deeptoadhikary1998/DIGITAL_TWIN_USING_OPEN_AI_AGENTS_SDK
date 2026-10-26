@@ -8,7 +8,7 @@ from agents import OpenAIChatCompletionsModel
 from openai import AsyncOpenAI
 from styles import CSS, JS, EXAMPLES
 from context import TWIN_SYSTEM_PROMPT
-from tools import note_unknown_questions,collect_emails
+from tools import note_unknown_questions,collect_emails,note_unknown_questions_ooc
 
 load_dotenv(override=True)
 
@@ -44,7 +44,7 @@ agent = Agent(
     {TWIN_SYSTEM_PROMPT}
     """,
     model=deepseek_model,
-    tools=[note_unknown_questions, collect_emails],
+    tools=[note_unknown_questions, collect_emails, note_unknown_questions_ooc],
 )
 
 # 3. One SQLite session per Gradio session

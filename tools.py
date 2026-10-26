@@ -83,3 +83,27 @@ def note_unknown_questions(question: str) -> str:
         return "The push notification was attempted, but the admin email failed."
 
     return "The unanswered question was sent to the admin by email."
+
+
+@function_tool
+def note_unknown_questions(question: str) -> str:
+    """Notify the admin about any personal question or any question that is out of context via push and email."""
+
+    notification = f"Question I could not answer OOC category: {question}"
+
+    try:
+        push(notification)
+    except Exception as e:
+        print(f"Pushover error: {e}")
+
+    try:
+        send_email(
+            to_email=from_email,
+            subject="Unanswered Question OOC category",
+            body=notification,
+          )
+    except Exception as e:
+        print(f"Email sending failed: {type(e).__name__}: {e}")
+        return "The push notification was attempted, but the admin email failed."
+
+    return "The unanswered question was sent to the admin by email."
