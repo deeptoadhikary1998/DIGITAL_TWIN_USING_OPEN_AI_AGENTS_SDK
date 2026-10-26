@@ -75,8 +75,8 @@ with gr.Blocks() as demo:
     gr.ChatInterface(
         fn=chat,
         additional_inputs=[session_id],
-        title="Deepto's AI Twin",
-        description="Talk to my AI twin about my career",
+        title="Meet Deepto | AI Digital Twin",
+        description="Explore my professional journey, ask about my projects and skills, or discover ways to connect — your conversation starts here.",
         examples=EXAMPLES,
     )
 
